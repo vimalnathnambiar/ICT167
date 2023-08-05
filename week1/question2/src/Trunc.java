@@ -53,6 +53,7 @@ public class Trunc {
                 System.out.println("Next.");
             }
         }
+        input.close();
         System.out.println("You quit.");
     }
 

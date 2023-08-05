@@ -63,6 +63,7 @@ public class VowelCopy {
                 System.out.println("\nThe string is too long. Please enter again.\n");
             }
         }
+        input.close();
         System.out.println("\nExiting the program now\n");
     }
 
