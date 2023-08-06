@@ -1,7 +1,3 @@
-
-// Imported libraries
-import java.util.Scanner;
-
 /*
  * Title: Lab Week 1 - Question 3
  * Author: Vimalnath Nambiar
@@ -22,9 +18,12 @@ import java.util.Scanner;
  * - Only the index where each vowel first appeared should be displayed
  */
 
+// Imported libraries
+import java.util.Scanner;
+
 // StringReader Class
 public class VowelCopy {
-    // Main Method
+    // Main method
     public static void main(String[] args) {
         // Initialise scanner object for input
         Scanner input = new Scanner(System.in);

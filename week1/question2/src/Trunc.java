@@ -1,7 +1,3 @@
-
-// Imported libraries
-import java.util.Scanner;
-
 /*
  * Title: Lab Week 1 - Question 2
  * Author: Vimalnath Nambiar
@@ -19,9 +15,12 @@ import java.util.Scanner;
  * - Uses an out of range number (<-100 or >100) to exit the program
  */
 
+// Imported libraries
+import java.util.Scanner;
+
 // Trunc Class
 public class Trunc {
-    // Main Method
+    // Main method
     public static void main(String[] args) {
         // Initialise scanner object for input
         Scanner input = new Scanner(System.in);
