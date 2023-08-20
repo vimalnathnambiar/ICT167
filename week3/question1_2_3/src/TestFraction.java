@@ -53,20 +53,21 @@ public class TestFraction {
             System.out.print("Enter the denominator value: ");
             int denominator = kb.nextInt();
 
-            // // Create an object instance of class Fraction
-            // // frac is an object referencing to class Fraction
-            // Fraction frac = new Fraction(numerator, denominator);
+            // Check if denominator equals 0
+            if (denominator != 0) {
+                // Set numerator and denominator values to object frac
+                frac.setNumerator(numerator);
+                frac.setDenominator(denominator);
 
-            // Set numerator and denominator values to object frac
-            frac.setNumerator(numerator);
-            frac.setDenominator(denominator);
+                // Get numerator and denominator values stored in the object reference
+                System.out.println("Numerator stored: " + frac.getNumerator());
+                System.out.println("Denominator stored: " + frac.getDenominator());
 
-            // Get numerator and denominator values stored in the object reference
-            System.out.println("Numerator stored: " + frac.getNumerator());
-            System.out.println("Denominator stored: " + frac.getDenominator());
-
-            // Output fraction
-            frac.outputFraction();
+                // Output fraction
+                System.out.println("Fraction: " + frac.outputFraction());
+            } else {
+                System.out.println("\nDenominator cannot be zero. Please enter a valid fraction value.\n");
+            }
         }
         // Close scanner object
         kb.close();

@@ -39,28 +39,6 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
-    // Constructors
-    public Fraction() {
-
-    }
-
-    public Fraction(int numerator, int denominator) {
-        // Throw an error if denominator value entered is 0
-        if (denominator == 0) {
-            throw new IllegalArgumentException("Denominator cannot be zero");
-        }
-
-        // Check denominator input
-        // If negative, swap sign of both numerator and denominator instance variables
-        if (denominator < 0) {
-            numerator = -numerator;
-            denominator = -denominator;
-        }
-
-        this.numerator = numerator;
-        this.denominator = denominator;
-    }
-
     // Mutator methods
     // Set numerator value
     public void setNumerator(int numerator) {
@@ -70,11 +48,6 @@ public class Fraction {
     // Set denominator value
     // Also checks if the denominator = 0 or negative value
     public void setDenominator(int denominator) {
-        // Throw an error if denominator value entered is 0
-        if (denominator == 0) {
-            throw new IllegalArgumentException("Denominator cannot be zero");
-        }
-
         // Check denominator input
         // If negative, swap sign of both numerator and denominator instance variables
         if (denominator < 0) {
@@ -95,8 +68,8 @@ public class Fraction {
         return denominator;
     }
 
-    // Output fraction in the form of numerator / denominator
-    public void outputFraction() {
-        System.out.println("Fraction: " + this.numerator + " / " + this.denominator + "\n");
+    // Return fraction in the form of numerator / denominator
+    public String outputFraction() {
+        return this.numerator + " / " + this.denominator + "\n";
     }
 }
