@@ -56,7 +56,6 @@ public class TestFraction2 {
             } else {
                 System.out.println("\nDenominator cannot be zero. Please enter a valid fraction value.\n");
             }
-
         }
         kb.close();
     }
