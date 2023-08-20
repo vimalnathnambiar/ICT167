@@ -60,5 +60,4 @@ public class TestFraction2 {
         }
         kb.close();
     }
-
 }
