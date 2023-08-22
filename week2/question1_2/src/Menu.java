@@ -56,7 +56,7 @@ public class Menu {
 
             // Receive user choice
             System.out.print("Enter your choice: ");
-            char choice = kb.nextLine().trim().toLowerCase().charAt(0);
+            char choice = kb.next().trim().toLowerCase().charAt(0);
             System.out.println();
 
             // Process user input

@@ -62,9 +62,6 @@ public class MenuOptions {
         System.out.print("z: ");
         double z = Menu.kb.nextDouble();
 
-        // Consume the remaining newline character after the numerical input
-        Menu.kb.nextLine();
-
         // Identify and display largest and smallest number
         double largest = Math.max(x, Math.max(y, z));
         double smallest = Math.min(x, Math.min(y, z));
@@ -80,9 +77,6 @@ public class MenuOptions {
         int m = Menu.kb.nextInt();
         System.out.print("n: ");
         int n = Menu.kb.nextInt();
-
-        // Consume the remaining newline character after the numerical input
-        Menu.kb.nextLine();
 
         // Initialise variables
         int start, end;
@@ -131,11 +125,8 @@ public class MenuOptions {
         System.out.print("Side C: ");
         int c = Menu.kb.nextInt();
 
-        // Consume the remaining newline character after the numerical input
-        Menu.kb.nextLine();
-
         // Check if two sides are larger than the other
-        if (a + b > c && a + c > b && b + c > a) {
+        if (a + b > c || a + c > b || b + c > a) {
             System.out.println("The sides form a triangle.");
         } else {
             System.out.println("The sides do not form a triangle.");
@@ -148,9 +139,6 @@ public class MenuOptions {
         System.out.println("Enter an integer to check");
         System.out.print("n: ");
         int n = Menu.kb.nextInt();
-
-        // Consume the remaining newline character after the numerical input
-        Menu.kb.nextLine();
 
         boolean isPrime = true;
 
@@ -183,8 +171,6 @@ public class MenuOptions {
         for (int i = 0; i < 10; i++) {
             numArray[i] = Menu.kb.nextInt();
         }
-        // Consume the remaining newline character after the numerical input
-        Menu.kb.nextLine();
 
         // Initialise variable to store sum, min and max
         int sum = 0;
