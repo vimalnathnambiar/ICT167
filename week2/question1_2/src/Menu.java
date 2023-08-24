@@ -62,6 +62,7 @@ public class Menu {
             // Process user input
             flag = menu.processInput(flag, choice);
         }
+        System.out.println("Menu exited successfully");
         kb.close();
     }
 }

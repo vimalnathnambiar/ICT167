@@ -27,17 +27,23 @@
  * - Understand why your client class can't compile when instance variable is switched to hidden
  */
 
+// Import libraries
+import java.util.Scanner;
+
 // Fraction class
 public class Fraction {
-    // // Two instance variables called numerator and denominator
-    // // that are publicly available
-    // public int numerator;
-    // public int denominator;
+    // Private scanner object
+    private Scanner kb = new Scanner(System.in);
 
-    // Two instance variables called numerator and denominator
+    // Instance variables called numerator and denominator
     // that are hidden
     private int numerator;
     private int denominator;
+
+    // Default constructor
+    public Fraction() {
+        // Empty constructor
+    }
 
     // Mutator methods
     // Set numerator value
@@ -48,24 +54,51 @@ public class Fraction {
     // Set denominator value
     // Also checks if the denominator = 0 or negative value
     public void setDenominator(int denominator) {
-        // Check denominator input
-        // If negative, swap sign of both numerator and denominator instance variables
-        if (denominator < 0) {
-            setNumerator(-numerator);
-            denominator = -denominator;
-        }
         this.denominator = denominator;
+        swapSign();
     }
 
     // Accessor Methods
     // Returns numerator value
     public int getNumerator() {
-        return numerator;
+        return this.numerator;
     }
 
     // Return denominator value
     public int getDenominator() {
-        return denominator;
+        return this.denominator;
+    }
+
+    // Get input numerator
+    public void getInputNumerator() {
+        // Retrieve user input for numerator value
+        System.out.print("Enter the numerator value: ");
+        this.numerator = kb.nextInt();
+    }
+
+    // Get input denominator
+    public void getInputDenominator() {
+
+        do {
+            // Retrieve user input for denominator value
+            System.out.print("Enter the denominator value: ");
+            this.denominator = kb.nextInt();
+
+            if (this.denominator == 0) {
+                System.out.println("\nError! Denominator cannot be zero.\n");
+            }
+        } while (this.denominator == 0);
+
+        swapSign();
+    }
+
+    // Swap denominator and numerator signs
+    public void swapSign() {
+        // If negative, swap sign of both numerator and denominator instance variables
+        if (this.denominator < 0) {
+            this.numerator = -this.numerator;
+            this.denominator = -this.denominator;
+        }
     }
 
     // Return fraction in the form of numerator / denominator

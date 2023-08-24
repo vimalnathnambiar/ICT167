@@ -33,7 +33,7 @@ public class MenuOptions {
                 optionF();
                 break;
             case 'q':
-                System.out.println("Exited Menu");
+                System.out.println("Exiting Menu");
                 flag = false;
                 break;
             default:
@@ -126,7 +126,7 @@ public class MenuOptions {
         int c = Menu.kb.nextInt();
 
         // Check if two sides are larger than the other
-        if (a + b > c || a + c > b || b + c > a) {
+        if (a + b > c && a + c > b && b + c > a) {
             System.out.println("The sides form a triangle.");
         } else {
             System.out.println("The sides do not form a triangle.");

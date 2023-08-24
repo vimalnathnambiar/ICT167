@@ -15,48 +15,33 @@
  * - Exit program by entering a fraction that represents a zero fraction
  */
 
-// Import libraries/dependencies
-import java.util.*;
-
 // TestFraction2 class
 public class TestFraction2 {
     // Main method
     public static void main(String[] args) {
-        // Initialise scanner object to retrieve user input
-        Scanner kb = new Scanner(System.in);
-
         // Initialise object of Fraction class
         Fraction fracTotal = new Fraction(0, 1);
+        Fraction frac = new Fraction();
 
         // Start loop to accept user input
         while (true) {
-            // Retrieve user input for numerator and denominator value
-            System.out.print("Enter the numerator value (Enter 0 to exit program): ");
-            int numerator = kb.nextInt();
+            // Get user input for numerator
+            frac.getInputNumerator();
 
             // Check if a numerator is 0 for zero fraction
-            if (numerator == 0) {
+            if (frac.getNumerator() == 0) {
                 System.out.println("\nExiting program now");
                 break;
             }
 
-            System.out.print("Enter the denominator value: ");
-            int denominator = kb.nextInt();
+            // Get user input for denominator
+            frac.getInputDenominator();
 
-            // Check if denominator equals 0
-            if (denominator != 0) {
-                // Create instance of Fraction class with given values
-                Fraction frac = new Fraction(numerator, denominator);
+            // Add fraction
+            fracTotal = fracTotal.add(frac);
 
-                // Add fraction
-                fracTotal = fracTotal.add(frac);
-
-                // Display running total
-                System.out.println("Running total: " + fracTotal.outputFraction());
-            } else {
-                System.out.println("\nDenominator cannot be zero. Please enter a valid fraction value.\n");
-            }
+            // Display running total
+            System.out.println("Running total: " + fracTotal.outputFraction());
         }
-        kb.close();
     }
 }
