@@ -55,7 +55,6 @@ public class Fraction {
     }
 
     // Set denominator value
-    // Also checks if the denominator = 0 or negative value
     public void setDenominator(int denominator) {
         this.denominator = denominator;
         swapSign();
