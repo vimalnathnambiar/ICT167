@@ -20,7 +20,7 @@ public class TestFraction2 {
     // Main method
     public static void main(String[] args) {
         // Initialise object of Fraction class
-        Fraction fracTotal = new Fraction(0, 1);
+        Fraction fracTotal = new Fraction();
         Fraction frac = new Fraction();
 
         // Start loop to accept user input

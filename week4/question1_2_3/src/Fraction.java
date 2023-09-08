@@ -39,7 +39,8 @@ public class Fraction {
 
     // Constructors
     public Fraction() {
-        // Empty constructor
+        this.numerator = 0;
+        this.denominator = 1;
     }
 
     public Fraction(int numerator, int denominator) {
