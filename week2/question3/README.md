@@ -12,7 +12,7 @@ Date: 31-07-2023
     3. Any other design principle
     - KISS (Keep It Simple, Stupid): The code is kept simple, straightforward, and easy to understand. The menu-driven structure with separate methods for each option simplifies the overall flow of the program.
 
-    - Encapsulation: The program uses methods to encapsulate the implementation details of each task, hiding the complexity and providing a clear interface for interaction.
+    - Encapsulation: The program uses private methods to encapsulate the implementation details of each task, hiding the complexity and providing a clear interface for interaction.
 
     - High Cohesion and Low Coupling: Each method in the program is focused on a specific task, ensuring high cohesion. The methods are loosely coupled with each other, promoting modularity and maintainability.
 

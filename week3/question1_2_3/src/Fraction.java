@@ -32,11 +32,7 @@ import java.util.Scanner;
 
 // Fraction class
 public class Fraction {
-    // Private scanner object
-    private Scanner kb = new Scanner(System.in);
-
-    // Instance variables called numerator and denominator
-    // that are hidden
+    // Private instance variables called numerator and denominator
     private int numerator;
     private int denominator;
 
@@ -65,13 +61,18 @@ public class Fraction {
 
     // Get input numerator
     public void getInputNumerator() {
+        Scanner kb = new Scanner(System.in);
+
         // Retrieve user input for numerator value
         System.out.print("Enter the numerator value: ");
         this.numerator = kb.nextInt();
+
+        kb.close();
     }
 
     // Get input denominator
     public void getInputDenominator() {
+        Scanner kb = new Scanner(System.in);
 
         do {
             // Retrieve user input for denominator value
@@ -82,6 +83,7 @@ public class Fraction {
                 System.out.println("\nError! Denominator cannot be zero.\n");
             }
         } while (this.denominator == 0);
+        kb.close();
 
         swapSign();
     }

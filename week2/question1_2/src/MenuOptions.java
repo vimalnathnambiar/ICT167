@@ -45,14 +45,14 @@ public class MenuOptions {
     }
 
     // Option A
-    public void optionA() {
+    private void optionA() {
         // Display your name and tutor's name
         System.out.println("Name: Vimalnath Nambiar");
         System.out.println("Tutor's name: Vimalnath Nambiar");
     }
 
     // Option B
-    public void optionB() {
+    private void optionB() {
         // Receive user input for three floating point numbers (double)
         System.out.println("Enter three double numbers");
         System.out.print("x: ");
@@ -70,7 +70,7 @@ public class MenuOptions {
     }
 
     // Option C
-    public void optionC() {
+    private void optionC() {
         // Receive user input for two integer numbers
         System.out.println("Enter two integer numbers");
         System.out.print("m: ");
@@ -115,7 +115,7 @@ public class MenuOptions {
     }
 
     // Option D
-    public void optionD() {
+    private void optionD() {
         // Receive user input for three integer numbers
         System.out.println("Enter three integer numbers representing the the sides of a triangle:");
         System.out.print("Side A: ");
@@ -134,7 +134,7 @@ public class MenuOptions {
     }
 
     // Option E
-    public void optionE() {
+    private void optionE() {
         // Receive user input for an integer numbers
         System.out.println("Enter an integer to check");
         System.out.print("n: ");
@@ -163,7 +163,7 @@ public class MenuOptions {
     }
 
     // Option F
-    public void optionF() {
+    private void optionF() {
         // Create an empty array to store 10 integer numbers
         int[] numArray = new int[10];
 
