@@ -40,11 +40,6 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
-    // Default constructor
-    public Fraction() {
-        // Empty constructor
-    }
-
     // Mutator methods
     // Set numerator value
     public void setNumerator(int numerator) {

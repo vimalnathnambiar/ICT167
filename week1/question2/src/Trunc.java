@@ -96,13 +96,11 @@ public class Trunc {
         int whole = (int) nPlus;
 
         // Assign negative sign to whole number if num was a negative
-        String sign = "";
-        if (neg)
-            sign = "-";
-        // whole = -whole;
+        if (neg) {
+            whole = -whole;
+        }
 
         // Display the message, sign, the whole number
-        System.out.println(msg + "" + sign + whole);
-        // System.out.println(msg + "" + whole);
+        System.out.println(msg + "" + whole);
     }
 }
