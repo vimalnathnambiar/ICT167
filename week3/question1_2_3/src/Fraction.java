@@ -36,6 +36,13 @@ public class Fraction {
     private int numerator;
     private int denominator;
 
+    // Constructors
+    // Default constructor
+    public Fraction() {
+        this.numerator = 0;
+        this.denominator = 1;
+    }
+
     // Mutator methods
     // Set numerator value
     public void setNumerator(int numerator) {
@@ -60,20 +67,14 @@ public class Fraction {
     }
 
     // Get input numerator
-    public void getInputNumerator() {
-        Scanner kb = new Scanner(System.in);
-
+    public void getInputNumerator(Scanner kb) {
         // Retrieve user input for numerator value
         System.out.print("Enter the numerator value: ");
         this.numerator = kb.nextInt();
-
-        kb.close();
     }
 
     // Get input denominator
-    public void getInputDenominator() {
-        Scanner kb = new Scanner(System.in);
-
+    public void getInputDenominator(Scanner kb) {
         do {
             // Retrieve user input for denominator value
             System.out.print("Enter the denominator value: ");
@@ -83,7 +84,6 @@ public class Fraction {
                 System.out.println("\nError! Denominator cannot be zero.\n");
             }
         } while (this.denominator == 0);
-        kb.close();
 
         swapSign();
     }

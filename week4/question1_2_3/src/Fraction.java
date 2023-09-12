@@ -24,14 +24,11 @@
  *      - Methods are not to be used by the client program
  */
 
-// Fraction class
-
+// Import libraries
 import java.util.Scanner;
 
+// Fraction class
 public class Fraction {
-    // Private scanner object
-    private Scanner kb = new Scanner(System.in);
-
     // Instance variables called numerator and denominator
     // that are hidden
     private int numerator;
@@ -73,14 +70,14 @@ public class Fraction {
     }
 
     // Get input numerator
-    public void getInputNumerator() {
+    public void getInputNumerator(Scanner kb) {
         // Retrieve user input for numerator value
         System.out.print("Enter the numerator value: ");
         this.numerator = kb.nextInt();
     }
 
     // Get input denominator
-    public void getInputDenominator() {
+    public void getInputDenominator(Scanner kb) {
 
         do {
             // Retrieve user input for denominator value

@@ -23,17 +23,24 @@
  * - Write pseudocode before coding the class and the client program
  */
 
+// Import libraries
+import java.util.Scanner;
+
 // TestFraction class
 public class TestFraction {
     // Main method
     public static void main(String[] args) {
+
+        // Initialise scanner object
+        Scanner kb = new Scanner(System.in);
+
         // Create an object instance of class Fraction
         // frac is an object referencing to class Fraction
         Fraction frac = new Fraction();
 
         while (true) {
             // Get user input for numerator
-            frac.getInputNumerator();
+            frac.getInputNumerator(kb);
 
             // Check if a negative value was inputted by user for numerator
             // If negative, break out of loop to exit program
@@ -43,11 +50,11 @@ public class TestFraction {
             }
 
             // Get user input for denominator
-            frac.getInputDenominator();
+            frac.getInputDenominator(kb);
 
             // Output fraction
             System.out.println("Fraction: " + frac.outputFraction());
         }
+        kb.close();
     }
-
 }

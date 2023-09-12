@@ -15,10 +15,16 @@
  * - Exit program by entering a fraction that represents a zero fraction
  */
 
+// Import libraries
+import java.util.Scanner;
+
 // TestFraction2 class
 public class TestFraction2 {
     // Main method
     public static void main(String[] args) {
+        // Initialise Scanner object
+        Scanner kb = new Scanner(System.in);
+
         // Initialise object of Fraction class
         Fraction fracTotal = new Fraction();
         Fraction frac = new Fraction();
@@ -26,7 +32,7 @@ public class TestFraction2 {
         // Start loop to accept user input
         while (true) {
             // Get user input for numerator
-            frac.getInputNumerator();
+            frac.getInputNumerator(kb);
 
             // Check if a numerator is 0 for zero fraction
             if (frac.getNumerator() == 0) {
@@ -35,7 +41,7 @@ public class TestFraction2 {
             }
 
             // Get user input for denominator
-            frac.getInputDenominator();
+            frac.getInputDenominator(kb);
 
             // Add fraction
             fracTotal = fracTotal.add(frac);
@@ -43,5 +49,6 @@ public class TestFraction2 {
             // Display running total
             System.out.println("Running total: " + fracTotal.outputFraction());
         }
+        kb.close();
     }
 }
