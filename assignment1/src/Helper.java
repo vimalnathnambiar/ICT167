@@ -22,12 +22,12 @@ public class Helper {
     /*
      * Method to check if a record with the name inputted already exists
      */
-    public static boolean isNameExists(ChangeC[] array, String name) {
+    public static boolean isNameExists(ChangeC[] coinChangeRecords, String name) {
         // Loop through array
-        for (ChangeC changeC : array) {
+        for (ChangeC record : coinChangeRecords) {
             // Check if index of the array is not null and
             // if the ChangeC object has the same name
-            if (changeC != null && changeC.getName().equalsIgnoreCase(name)) {
+            if (record != null && record.getName().equalsIgnoreCase(name)) {
                 return true;
             }
         }
@@ -56,18 +56,18 @@ public class Helper {
      * Method to set a new coin amount for an already existing record
      * and return updated ChangeC record array
      */
-    public static ChangeC[] setNewCoinAmount(ChangeC[] array, String name, int coinAmount) {
+    public static ChangeC[] setNewCoinAmount(ChangeC[] coinChangeRecords, String name, int coinAmount) {
         // Loop through array
-        for (ChangeC changeC : array) {
+        for (ChangeC record : coinChangeRecords) {
             // Check if index of the array is not null and
             // if the ChangeC object has the same name
-            if (changeC != null && changeC.getName().equalsIgnoreCase(name)) {
+            if (record != null && record.getName().equalsIgnoreCase(name)) {
                 // Set new coin amount
-                changeC.setCoinAmount(coinAmount);
+                record.setCoinAmount(coinAmount);
                 break;
             }
         }
 
-        return array;
+        return coinChangeRecords;
     }
 }

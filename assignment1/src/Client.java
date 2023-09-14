@@ -36,20 +36,29 @@ public class Client {
     /*
      * Global variables
      */
-    private static Scanner kb = new Scanner(System.in);
+    private static Scanner inputScanner = new Scanner(System.in);
     private static final int INITIAL_CAPACITY = 10;
-    private static ChangeC[] personChange = new ChangeC[INITIAL_CAPACITY];
+    private static ChangeC[] coinChangeRecords = new ChangeC[INITIAL_CAPACITY];
+    private static int counter = 0;
 
     /*
      * Main method
      */
     public static void main(String[] args) {
+        // Display student credentials
+        displayCredentials("Vimalnath Nambiar", "12345678");
+
         // Display initial message
-        System.out.println("\nCoin Changer Record Program\n---");
+        System.out.println("\n---------------------------");
+        System.out.println("Coin Changer Record Program");
+        System.out.println("---------------------------");
         System.out.println("Recommendation: Please enter at least 10 records to test the program");
 
+        // Hardcoded data for testing
+        hardcodeRecords();
+
         // Get records from client
-        getRecords();
+        // getRecords();
 
         // Execute menu
         executeMenu();
@@ -59,27 +68,52 @@ public class Client {
     }
 
     /*
+     * Method to display credentials
+     */
+    private static void displayCredentials(String name, String studentID) {
+        System.out.println("\nName: " + name + "\nStudent ID: " + studentID);
+    }
+
+    /*
+     * Method to hardcode records into coin change records array for testing
+     * purposes
+     */
+    private static void hardcodeRecords() {
+        System.out.println("\nHardcoding 10 records into the array...");
+        coinChangeRecords[0] = new ChangeC("John", 51);
+        coinChangeRecords[1] = new ChangeC("Alice", 37);
+        coinChangeRecords[2] = new ChangeC("Bob", 45);
+        coinChangeRecords[3] = new ChangeC("Eve", 158);
+        coinChangeRecords[4] = new ChangeC("Charlie", 1257);
+        coinChangeRecords[5] = new ChangeC("David", 593);
+        coinChangeRecords[6] = new ChangeC("Frank", 98);
+        coinChangeRecords[7] = new ChangeC("Grace", 3);
+        coinChangeRecords[8] = new ChangeC("Helen", 100);
+        coinChangeRecords[9] = new ChangeC("Ivy", 203);
+
+        counter = 10;
+    }
+
+    /*
      * Method to retrieve record from user
      */
     private static void getRecords() {
-        // Initialise local variables
-        int counter = 0;
-
         // Loop to retrieve record information
         while (true) {
-            // Check if personChange array has reached maximum capacity to store new inputs
-            if (counter == personChange.length) {
+            // Check if coinChangeRecords array has reached maximum capacity to store new
+            // inputs
+            if (counter == coinChangeRecords.length) {
                 // Resize array
-                personChange = Arrays.copyOf(personChange, (counter + INITIAL_CAPACITY));
+                coinChangeRecords = Arrays.copyOf(coinChangeRecords, (counter + INITIAL_CAPACITY));
             }
 
             try {
                 // Get name for the record
                 System.out.print("\nPlease enter the name for person " + (counter + 1) + ": ");
-                String name = kb.next();
+                String name = inputScanner.next();
 
                 // Check if record with the name already exist
-                if (Helper.isNameExists(personChange, name)) {
+                if (Helper.isNameExists(coinChangeRecords, name)) {
                     System.out.println("\nThe name of the person you just provided already exist within the system");
 
                     // Check if coint amount should be changed for the person
@@ -87,7 +121,7 @@ public class Client {
                     while (true) {
                         try {
                             System.out.print("\nWould you like to provide a new coin amount for " + name + "? (Y/N) ");
-                            proceed = kb.next().toUpperCase().charAt(0);
+                            proceed = inputScanner.next().toUpperCase().charAt(0);
                             Helper.isProceedValid(proceed);
                             break;
                         } catch (Exception e) {
@@ -102,15 +136,15 @@ public class Client {
                         while (true) {
                             try {
                                 System.out.print("Please enter a new coin value (>= 0): ");
-                                int coinAmount = kb.nextInt();
+                                int coinAmount = inputScanner.nextInt();
                                 Helper.isCoinAmountLessThanZero(coinAmount);
 
                                 // Set new coin amount for the person's record
-                                personChange = Helper.setNewCoinAmount(personChange, name, coinAmount);
+                                coinChangeRecords = Helper.setNewCoinAmount(coinChangeRecords, name, coinAmount);
                                 break;
                             } catch (java.util.InputMismatchException e) {
                                 System.out.println("\nInvalid input type. Please try again...\n");
-                                kb.next();
+                                inputScanner.next();
                                 continue;
                             } catch (Exception e) {
                                 System.out.println(e.getMessage());
@@ -123,15 +157,15 @@ public class Client {
                     while (true) {
                         try {
                             System.out.print("Please enter a coin value for " + name + " (>= 0): ");
-                            int coinAmount = kb.nextInt();
+                            int coinAmount = inputScanner.nextInt();
                             Helper.isCoinAmountLessThanZero(coinAmount);
 
                             // Create new object reference of ChangeC class
-                            personChange[counter++] = new ChangeC(name, coinAmount);
+                            coinChangeRecords[counter++] = new ChangeC(name, coinAmount);
                             break;
                         } catch (java.util.InputMismatchException e) {
                             System.out.println("\nInvalid input type. Please try again...\n");
-                            kb.next();
+                            inputScanner.next();
                             continue;
                         } catch (Exception e) {
                             System.out.println(e.getMessage());
@@ -145,7 +179,7 @@ public class Client {
                 while (true) {
                     try {
                         System.out.print("\nDo you have more records to enter into the system? (Y/N): ");
-                        proceed = kb.next().toUpperCase().charAt(0);
+                        proceed = inputScanner.next().toUpperCase().charAt(0);
                         Helper.isProceedValid(proceed);
                         break;
                     } catch (Exception e) {
@@ -183,17 +217,17 @@ public class Client {
             while (true) {
                 try {
                     System.out.print("Please enter a valid option to be executed: ");
-                    menuOption = kb.nextInt();
+                    menuOption = inputScanner.nextInt();
                     break;
                 } catch (java.util.InputMismatchException e) {
                     System.out.println("\nInvalid input type. Please try again...\n");
-                    kb.next();
+                    inputScanner.next();
                     continue;
                 }
             }
 
             // Execute menu option chosen
-            flag = Menu.executeMenuOptions(kb, personChange, menuOption);
+            flag = Menu.executeMenuOptions(inputScanner, coinChangeRecords, menuOption);
         }
     }
 }
