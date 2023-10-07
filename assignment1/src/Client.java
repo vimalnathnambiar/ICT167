@@ -58,7 +58,7 @@ public class Client {
         hardcodeRecords();
 
         // Get records from client
-        // getRecords();
+        getRecords();
 
         // Execute menu
         executeMenu();
