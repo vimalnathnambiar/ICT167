@@ -2,7 +2,7 @@
  * Title: Lab Week 5 - Question 1
  * Author: Vimalnath Nambiar
  * Date: 08-09-2023
- * File: question1.java
+ * File: Question1.java
  * 
  * Purpose: 
  * - A program to store an array of integer random numbers
@@ -23,7 +23,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class question1 {
+public class Question1 {
     // Initialise static variables
     static int smallestInt = 0;
     static int largestInt = 0;
