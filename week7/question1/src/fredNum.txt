@@ -1,0 +1,6 @@
+1 Hello,
+2 
+3 I am Fred.
+4 I am enrolled in ICT167.
+5 
+6 Bye

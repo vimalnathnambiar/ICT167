@@ -1,0 +1,10 @@
+Alice 85
+Bob 92
+Charlie 60
+David 78
+Eve 45
+Frank 73
+Grace 88
+Hannah 97
+Isabel 34
+Jack 67
