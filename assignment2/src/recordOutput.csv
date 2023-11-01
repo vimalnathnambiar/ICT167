@@ -1,0 +1,13 @@
+Enrolment Type, First Name, Last Name, Student Number (ID), Unit ID, Unit Level, Assignment 1 Mark, Assignment 2 Mark, Final Exam Mark, Proposal Mark, Dissertation Mark, Overall Mark, Final Grade
+C, Juan, Lopez, 12374691, ICT168, 1, 86, 56, 71, NA, NA, 71, D
+C, Vimalnath, Nambiar, 20220227, ICT167, 1, 100, 100, 100, NA, NA, 100, HD
+C, Emily, Lee, 32243187, ICT168, 1, 64, 72, 96, NA, NA, 82, HD
+R, Nambiar, Vimalnath, 33619763, NA, NA, NA, NA, NA, 100, 100, 100, HD
+C, John, Smith, 37572712, ICT167, 1, 95, 80, 93, NA, NA, 90, HD
+C, Alice, Johnson, 41283101, ICT167, 1, 17, 45, 27, NA, NA, 29, N
+R, Emma, Martiner, 47065200, NA, NA, NA, NA, NA, 33, 60, 50, P
+C, Michael, Brown, 56890905, ICT167, 1, 50, 58, 70, NA, NA, 62, C
+R, Sophia, Clark, 57297616, NA, NA, NA, NA, NA, 4, 32, 22, N
+R, James, White, 77207438, NA, NA, NA, NA, NA, 58, 84, 74, D
+R, Daniel, Anderson, 85574934, NA, NA, NA, NA, NA, 68, 62, 64, C
+R, Olivia, Davis, 86365853, NA, NA, NA, NA, NA, 87, 68, 74, D
